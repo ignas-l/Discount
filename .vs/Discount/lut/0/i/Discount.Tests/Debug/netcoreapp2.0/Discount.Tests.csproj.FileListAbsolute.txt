@@ -1,0 +1,15 @@
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\b\Discount.Tests\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\b\Discount.Tests\Debug\netcoreapp2.0\xunit.runner.utility.netstandard15.dll
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\b\Discount.Tests\Debug\netcoreapp2.0\xunit.runner.reporters.netstandard15.dll
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\b\Discount.Tests\Debug\netcoreapp2.0\Resources\input.txt
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\b\Discount.Tests\Debug\netcoreapp2.0\Discount.Tests.deps.json
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\b\Discount.Tests\Debug\netcoreapp2.0\Discount.Tests.runtimeconfig.json
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\b\Discount.Tests\Debug\netcoreapp2.0\Discount.Tests.runtimeconfig.dev.json
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\b\Discount.Tests\Debug\netcoreapp2.0\Discount.Tests.dll
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\b\Discount.Tests\Debug\netcoreapp2.0\Discount.Tests.pdb
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\i\Discount.Tests\Debug\netcoreapp2.0\Discount.Tests.csprojResolveAssemblyReference.cache
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\i\Discount.Tests\Debug\netcoreapp2.0\Discount.Tests.csproj.CoreCompileInputs.cache
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\i\Discount.Tests\Debug\netcoreapp2.0\Discount.Tests.AssemblyInfoInputs.cache
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\i\Discount.Tests\Debug\netcoreapp2.0\Discount.Tests.AssemblyInfo.cs
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\i\Discount.Tests\Debug\netcoreapp2.0\Discount.Tests.dll
+C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\0\i\Discount.Tests\Debug\netcoreapp2.0\Discount.Tests.pdb
