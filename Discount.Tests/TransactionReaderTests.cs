@@ -21,7 +21,7 @@ namespace Discount.Tests
             {
                 Size = Constants.Sizes.Medium,
                 Date = DateTime.UtcNow,
-                ShippingPrice = Constants.ShippingPrices.LaPosteMedium,
+                ShippingPrice = Constants.ShippingPrices.Medium.LaPoste,
                 ShippingProvider = Constants.Providers.LaPoste,
                 Discount = new decimal(0.5)
             };

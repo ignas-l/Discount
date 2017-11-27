@@ -24,7 +24,7 @@ namespace Discount.Tests
                 {
                     Size = Constants.Sizes.Medium,
                     Date = DateTime.UtcNow,
-                    ShippingPrice = Constants.ShippingPrices.LaPosteMedium,
+                    ShippingPrice = Constants.ShippingPrices.Medium.LaPoste,
                     ShippingProvider = Constants.Providers.LaPoste,
                     Discount = new decimal(0.5)
                 },
@@ -32,14 +32,14 @@ namespace Discount.Tests
                 {
                     Size = Constants.Sizes.Small,
                     Date = DateTime.UtcNow,
-                    ShippingPrice = Constants.ShippingPrices.MondialRelaySmall,
+                    ShippingPrice = Constants.ShippingPrices.Small.MondialRelay,
                     ShippingProvider = Constants.Providers.MondialRelay
                 },
                 new Transaction
                 {
                     Size = Constants.Sizes.Large,
                     Date = DateTime.UtcNow,
-                    ShippingPrice = Constants.ShippingPrices.LaPosteMedium,
+                    ShippingPrice = Constants.ShippingPrices.Medium.LaPoste,
                     ShippingProvider = Constants.Providers.LaPoste,
                     Discount = new decimal(2.0),
                     CorruptedData = "CorruptedDataTest"
@@ -58,6 +58,12 @@ namespace Discount.Tests
                 _outputPrinter.PrintOutput(_transactions);
 
                 Assert.NotNull(sw.ToString());
+                Assert.Contains("CorruptedDataTest", sw.ToString());
+                Assert.Contains(Constants.Providers.LaPoste, sw.ToString());
+                Assert.Contains(Constants.Providers.MondialRelay, sw.ToString());
+                Assert.Contains(Constants.Sizes.Medium, sw.ToString());
+                Assert.Contains(Constants.Sizes.Small, sw.ToString());
+                Assert.Contains(Constants.Sizes.Large, sw.ToString());
             }
         }
     }

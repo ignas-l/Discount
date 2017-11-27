@@ -22,8 +22,8 @@ namespace Discount.Domain
             {
                 var discount = transaction.Discount > 0 ? transaction.Discount.Value.ToString(Constants.CurrencyFormat) : Constants.NoDiscount;
 
-                var line = $"{transaction.Date?.Year}-{transaction.Date?.Month}-{transaction.Date?.Day} " +
-                           $"{transaction.Size} {transaction.ShippingPrice?.ToString(Constants.CurrencyFormat)} {discount}";
+                var line = $"{transaction.Date?.Year}-{transaction.Date?.Month}-{transaction.Date?.Day} {transaction.Size}" +
+                           $"{transaction.ShippingProvider} {transaction.ShippingPrice?.ToString(Constants.CurrencyFormat)} {discount}";
 
                 Console.WriteLine(line);
             }

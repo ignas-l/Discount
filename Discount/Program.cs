@@ -12,6 +12,9 @@ namespace Discount
 
             var transactions = transactionReader.ReadTransactions();
 
+            var discountCalculator = new DiscountCalculator();
+            transactions = discountCalculator.CalculateDiscounts(transactions);
+
             var outputPrinter = new OutputPrinter();
             outputPrinter.PrintOutput(transactions);
 

@@ -1,4 +1,8 @@
-﻿namespace Discount.Configuration
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
+
+namespace Discount.Configuration
 {
     public static class Constants
     {
@@ -24,13 +28,42 @@
 
         public static class ShippingPrices
         {
-            public static decimal MondialRelaySmall = new decimal(2.00);
-            public static decimal MondialRelayMedium = new decimal(3.00);
-            public static decimal MondialRelayLarge = new decimal(4.00);
+            public static class Small
+            {
+                public static decimal MondialRelay = new decimal(2.00);
+                public static decimal LaPoste = new decimal(1.50);
+            }
 
-            public static decimal LaPosteSmall = new decimal(1.50);
-            public static decimal LaPosteMedium = new decimal(4.90);
-            public static decimal LaPosteLarge = new decimal(6.90);
+            public static class Medium
+            {
+                public static decimal MondialRelay = new decimal(3.00);
+                public static decimal LaPoste = new decimal(4.90);
+            }
+
+            public static class Large
+            {
+                public static decimal MondialRelay = new decimal(4.00);
+                public static decimal LaPoste = new decimal(6.90);
+            }
+        }
+
+        public static List<object> GetConstants(Type type)
+        {
+            // Gets all static and public members from a given type (and its base types as well).
+            var fieldInfos = type.GetFields(
+                BindingFlags.Public |
+                BindingFlags.Static |
+                BindingFlags.FlattenHierarchy);
+
+            var values = new List<object>();
+
+            // Iterates through the created list of static and public members and returns their values.
+            foreach (var fieldInfo in fieldInfos)
+            {
+                values.Add(type.GetField(fieldInfo.Name).GetValue(null));
+            }
+
+            return values;
         }
     }
 }

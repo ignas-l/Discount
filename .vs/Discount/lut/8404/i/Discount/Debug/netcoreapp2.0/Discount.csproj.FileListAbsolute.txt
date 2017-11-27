@@ -1,4 +1,0 @@
-C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\8404\i\Discount\Debug\netcoreapp2.0\Discount.csprojResolveAssemblyReference.cache
-C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\8404\i\Discount\Debug\netcoreapp2.0\Discount.csproj.CoreCompileInputs.cache
-C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\8404\i\Discount\Debug\netcoreapp2.0\Discount.AssemblyInfoInputs.cache
-C:\Users\maumastoks\Documents\Projects\Discount\.vs\Discount\lut\8404\i\Discount\Debug\netcoreapp2.0\Discount.AssemblyInfo.cs

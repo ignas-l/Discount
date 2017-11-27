@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 using Discount.Configuration;
 using Discount.Domain.Interfaces;
 using Discount.Domain.Objects;
@@ -47,8 +46,8 @@ namespace Discount.Domain
         // Checks if given transaction's size and provider contain valid values.
         private static bool ValidateConstants(Transaction transaction)
         {
-            var sizeConstants = GetConstants(typeof(Constants.Sizes));
-            var providerConstants = GetConstants(typeof(Constants.Providers));
+            var sizeConstants = Constants.GetConstants(typeof(Constants.Sizes));
+            var providerConstants = Constants.GetConstants(typeof(Constants.Providers));
 
             if (sizeConstants.Contains(transaction.Size) && providerConstants.Contains(transaction.ShippingProvider))
             {
@@ -56,25 +55,6 @@ namespace Discount.Domain
             }
 
             return false;
-        }
-
-        private static List<string> GetConstants(Type type)
-        {
-            // Gets all static and public members from a given type (and its base types as well).
-            var fieldInfos = type.GetFields(
-                BindingFlags.Public |
-                BindingFlags.Static |
-                BindingFlags.FlattenHierarchy);
-
-            var values = new List<string>();
-
-            // Iterates through the created list of static and public members and returns their values.
-            foreach (var fieldInfo in fieldInfos)
-            {
-                values.Add(type.GetField(fieldInfo.Name).GetValue(null).ToString());
-            }
-
-            return values;
         }
     }
 }
