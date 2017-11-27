@@ -18,6 +18,7 @@ namespace Discount
             var outputPrinter = new OutputPrinter();
             outputPrinter.PrintOutput(transactions);
 
+            Console.WriteLine("\nPress any button to close.");
             Console.ReadKey();
         }
     }

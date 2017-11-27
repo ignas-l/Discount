@@ -4,7 +4,7 @@ namespace Discount.Domain.Objects
 {
     public class Discounts
     {
-        public Transaction Transaction { get; set; }
+        public List<Transaction> Transactions { get; set; }
         public Dictionary<string, decimal> MonthlyDiscounts { get; set; }
     }
 }

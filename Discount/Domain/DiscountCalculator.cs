@@ -10,40 +10,14 @@ namespace Discount.Domain
     {
         public List<Transaction> CalculateDiscounts(List<Transaction> transactions)
         {
-            var calculatedTransactions = new List<Transaction>();
+            var monthlyDiscounts = GenerateMonthlyDiscounts(transactions);
 
-            var monthlyDiscounts = GenerateDiscounts(transactions);
-
-            foreach (var transaction in transactions)
-            {
-                calculatedTransactions.Add(CalculateDiscount(transaction, monthlyDiscounts));
-            }
-
-            return calculatedTransactions;
-        }
-
-        private static Transaction CalculateDiscount(Transaction transaction, Dictionary<string, decimal> monthlyDiscounts)
-        {
-            if (transaction.CorruptedData != null)
-                return transaction;
-
-            transaction = transaction.AssignShippingPrice();
-
-            var discounts = new Discounts
-            {
-                Transaction = transaction,
-                MonthlyDiscounts = monthlyDiscounts
-            };
-
-            discounts = discounts
-                .CalculateSmallShipmentDiscount();
-
-            return discounts.Transaction;
+            return CalculateDiscounts(transactions, monthlyDiscounts);
         }
 
         // This method takes in a list of transactions and returns a new dictionary with unique YearMonth keys.
         // Key equals to YearMonth, value equals to remaining monthly discount (defined in Constants).
-        private static Dictionary<string, decimal> GenerateDiscounts(IEnumerable<Transaction> transactions)
+        private static Dictionary<string, decimal> GenerateMonthlyDiscounts(IEnumerable<Transaction> transactions)
         {
             var yearMonth = new List<string>();
             foreach (var transaction in transactions)
@@ -63,6 +37,22 @@ namespace Discount.Domain
             }
 
             return discounts;
+        }
+
+        private static List<Transaction> CalculateDiscounts(List<Transaction> transactions, Dictionary<string, decimal> monthlyDiscounts)
+        {
+            var discounts = new Discounts
+            {
+                Transactions = transactions,
+                MonthlyDiscounts = monthlyDiscounts
+            };
+
+            discounts = discounts
+                .AssignShippingPrices()
+                .CalculateSmallShipmentDiscounts()
+                .CalculateLargeShipmentDiscounts();
+
+            return discounts.Transactions;
         }
     }
 }
