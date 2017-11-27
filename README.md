@@ -2,7 +2,7 @@
 Vinted homework
 
 Requires .NET Core 2.0 or later.
-Download and install SDK or Runtime from https://www.microsoft.com/net/download/windows
+Download and install SDK or Runtime from https://www.microsoft.com/net/download
 
 Input file location: Discount\Discount\Resources\input.txt
 
