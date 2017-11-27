@@ -13,3 +13,5 @@ To start via command line interface:
 To run tests:
   1. Go to solution folder, \Discount.Tests subfolder (where Discount.Tests.csproj project file exists)
   2. dotnet test
+
+For code reading purposes entry point is Program.cs
