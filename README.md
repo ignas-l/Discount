@@ -15,3 +15,8 @@ To run tests:
   2. dotnet test
 
 For code reading purposes entry point is Program.cs
+
+To modify constants (shipping prices, providers, sizes, separators, etc.): Discount\Configuration\Constants.cs
+To add new validation rules:
+  1. Define them in Discount\Domain\Utilities\CalculationExtensions.cs
+  2. Call them from Discount\Domain\DiscountCalculator.cs line 50.
